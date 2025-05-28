@@ -56,9 +56,9 @@ app.put("/completed", async (req, res) => {
         return res.status(404).json({ "message": "Id not found" });
     }
     return res.status(200).json({ "message": "Todo updated successfully" });
+});
 
-})
 
 app.listen(PORT, () => {
-    console.log('Server is up running..');
+    console.log('Server is up running..',PORT);
 })
