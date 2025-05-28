@@ -1,11 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors =require('cors');
 const app = express();
 
 const { createTodo,updateTodo } = require('./types');
 const { dbConnect, Todo } = require('./db');
 dotenv.config();
 
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT']
+}));
 app.use(express.json());
 dbConnect();
 
